@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "current-link-website": {
+    "channel-pro-website": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,42 +13,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/current-link-website",
+            "outputPath": "dist/channel-pro-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "optimization": {
-                "fonts": {
-                  "inline": false
-                }
-              },
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "2mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "16kb",
-                  "maximumError": "32kb"
-                }
+                { "type": "initial", "maximumWarning": "500kb", "maximumError": "1mb" },
+                { "type": "anyComponentStyle", "maximumWarning": "8kb", "maximumError": "16kb" }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": { "fonts": false }
             },
             "development": {
               "optimization": false,
@@ -61,40 +42,29 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "current-link-website:build:production"
-            },
-            "development": {
-              "buildTarget": "current-link-website:build:development"
-            }
+            "production": { "buildTarget": "channel-pro-website:build:production" },
+            "development": { "buildTarget": "channel-pro-website:build:development" }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "current-link-website:build"
-          }
+          "options": { "buildTarget": "channel-pro-website:build" }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
