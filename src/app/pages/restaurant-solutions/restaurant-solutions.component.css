@@ -207,6 +207,182 @@
   font-weight: 600;
 }
 
+/* Simphony Section */
+.simphony-section {}
+
+.simphony-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.simphony-text .badge { margin-bottom: 16px; }
+.simphony-text h2 { margin-bottom: 0; }
+
+.simphony-capabilities {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.sc-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.sc-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-100);
+  color: var(--gold-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sc-item div { display: flex; flex-direction: column; gap: 4px; }
+.sc-item strong { font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); }
+.sc-item p { font-size: 0.875rem; margin: 0; }
+
+/* Simphony Visual Card */
+.simphony-visual { display: flex; justify-content: center; }
+
+.simphony-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--navy-900);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sv-title {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.sv-badge {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-300);
+  background: rgba(212,165,32,0.12);
+  border: 1px solid rgba(212,165,32,0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.sv-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+
+.sv-metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sv-metric {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sv-m-val {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold-300);
+}
+
+.sv-m-lbl { font-size: 0.65rem; color: rgba(255,255,255,0.45); }
+
+.sv-concept-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.sv-concept-list { display: flex; flex-direction: column; gap: 8px; }
+
+.sv-concept {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.sv-concept--active { background: rgba(255,255,255,0.04); }
+
+.sv-concept span {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.sv-c-count {
+  font-size: 0.7rem !important;
+  color: var(--gold-300) !important;
+  background: rgba(212,165,32,0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.sv-int-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+.sv-int-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sv-int-tags span {
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
 /* Features */
 .rest-features-grid {
   display: grid;
@@ -321,6 +497,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .micros-grid { grid-template-columns: 1fr; gap: 48px; }
+  .simphony-grid { grid-template-columns: 1fr; gap: 48px; }
   .rest-benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .rest-cta-grid { grid-template-columns: 1fr; gap: 32px; }
   .rest-cta-btns { flex-direction: row; flex-wrap: wrap; }
